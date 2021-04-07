@@ -1,0 +1,35 @@
+
+
+.coucou{
+	color : red;
+	font-weight: bold;
+	}
+
+#coucou{
+	color : green ;
+}
+
+.header_title{
+	text-align: center;
+	vertical-align: center;
+	margin: auto;
+}
+
+.img_portrait{
+	width: 50%;
+
+  	vertical-align: center;
+  	border-radius: 50%;
+}
+
+.logo_imgs{
+	width : 20px;
+}
+
+.logo_center_text{
+	vertical-align: top;
+}
+
+.no_style_list{
+	list-style:none;
+}

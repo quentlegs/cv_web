@@ -97,3 +97,15 @@ hr.rounded {
 .title_containers_center{
 	vertical-align : middle;
 }
+
+.color_h_f {
+	background-color: #212529;
+}
+
+.p_footer {
+	text-align : center;
+	color : white;
+}
+.ul_colmd2 {
+	margin-left: 10%;
+}

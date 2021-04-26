@@ -24,6 +24,16 @@ function on_load_body(){
 		}
 	}
 }
+/*
+function toggleVisibility(){
+	//recuperer le sibling de l'element cliqué (il faut mettre le bouton juste avant le div )
+	//et faire le toggle dessus
+	
+	var d = document.getElementById(id);
+    d.style.display = 
+       (d.style.display == "block") ? "none":"block";
+}
+*/
 
 
 

@@ -109,3 +109,7 @@ hr.rounded {
 .ul_colmd2 {
 	margin-left: 10%;
 }
+
+.block_display_div{
+	display: block;
+}

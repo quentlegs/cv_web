@@ -72,9 +72,21 @@
 	<!------------------------------------->
 	<!--Sommaire-->
 	<!------------------------------------->
-	<div class="container" id="div_generated">
-		<!--code du menu est généré totalement dans le javascript-->
+	<div class="container" >
+		<!--code du menu est généré totalement dans le javascript : si le javascript n'est pas activé, tout ce div n'est pas affiché (géré)-->
+		<div id="div_generated"></div>
+		
+		<div class="div_search">
+			<form class="form">
+	        	<input id="input_searched" type="search" class="form_input" placeholder="Rechercher un mot..." >
+				<button onclick="search_word()" type="button" class="btn btn-primary submit_button">Rechercher</button>
+				<button onclick="unhighlight_words()" type="button" class="btn btn-light submit_button">Annuler</button>
+	      	</form>
+
+		</div>
+
 	</div>
+
 
 	<div class="b-example-divider"></div>
 

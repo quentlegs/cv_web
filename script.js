@@ -4,7 +4,7 @@ function on_load_body(){
 	const headers = document.querySelectorAll('#h2_title_summary');
 	
 	if(headers.length > 0){ //si on a pas reussi a recupérer les titres, on affiche pas de menus
-		var global_div = '<header class="d-flex justify-content-center py-3" ><ul class="nav nav-pills" id="generated_summary" ></ul></header>';
+		var global_div = '<header class="d-flex justify-content-center py-1" ><ul class="nav nav-pills" id="generated_summary" ></ul></header>';
 		document.getElementById('div_generated').innerHTML += global_div;
 
 		for(var i=0, iMax = headers.length; i < iMax; i++) {
@@ -21,26 +21,40 @@ function on_load_body(){
 			   document.getElementById('generated_summary').innerHTML += li_element;
 			}
 		}
-	}
+		removeMarginDiv();
+	} 
 }
 
-var old_element_highlighted;
+var old_element_highlighted = null;
+function search_word(){
+	unhighlight_words(true);
 
-//function search_word(){
-	/*
-	var s = "s";
-	var reg = new RegExp(s, "g"	);
-	var doc = document.getElementsByTagName("p"), e, c;
-	for (var i = 0; i < doc.length; ++i) {
-	  e = doc[i]; 
-	  c = e.innerHTML.replace(reg ,
-	          "<span class='highlight'>"+s+"</span>"
-	          );
-	  if (c != e.innerHTML )
-	      e.innerHTML = c;
+	var word = document.getElementById("input_searched").value;
+	if(word.length !=  0){ //ajouter une petit infobulle quand c'est nul ? 
+		var reg = new RegExp(word, "g");
+		var doc = document.getElementsByTagName("p"), e, c;
+		for (var i = 0; i < doc.length; ++i) {
+		  e = doc[i]; 
+		  c = e.innerHTML.replace(reg ,
+		          "<span class='highlight'>"+word+"</span>"
+		          );
+		  if (c != e.innerHTML )
+		      e.innerHTML = c;
+		}
 	}
-	*/
-//}
+	old_element_highlighted = word;
+}
+
+
+function unhighlight_words(from_js = false){
+	var el = document.querySelectorAll('[class="highlight"]')
+	if(from_js == false){ //permet de supprimer le champ uniquement quand on clique sur le bouton "annuler"
+		document.getElementById("input_searched").value = null;
+	}
+	for (var j = 0; j < el.length; ++j) {
+		el[j].removeAttribute("class");
+	}	
+}
 
 
 /*
@@ -53,6 +67,14 @@ function toggleVisibility(){
        (d.style.display == "block") ? "none":"block";
 }
 */
+
+/*permet de supprimer une classe => de la marge quand le menu est affiché ou non*/
+function removeMarginDiv(){
+	var els = document.querySelectorAll('[class="div_search"]');
+	for(var i = 0; i< els.length ; i++){
+		els[i].removeAttribute("class");
+	}
+}
 
 
 

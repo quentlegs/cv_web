@@ -1,6 +1,5 @@
-
+/*Gestion du menu/sommmaire*/
 function on_load_body(){
-
 	/*Récupération des noms des menus*/
 	const headers = document.querySelectorAll('#h2_title_summary');
 	
@@ -24,6 +23,26 @@ function on_load_body(){
 		}
 	}
 }
+
+var old_element_highlighted;
+
+//function search_word(){
+	/*
+	var s = "s";
+	var reg = new RegExp(s, "g"	);
+	var doc = document.getElementsByTagName("p"), e, c;
+	for (var i = 0; i < doc.length; ++i) {
+	  e = doc[i]; 
+	  c = e.innerHTML.replace(reg ,
+	          "<span class='highlight'>"+s+"</span>"
+	          );
+	  if (c != e.innerHTML )
+	      e.innerHTML = c;
+	}
+	*/
+//}
+
+
 /*
 function toggleVisibility(){
 	//recuperer le sibling de l'element cliqué (il faut mettre le bouton juste avant le div )
